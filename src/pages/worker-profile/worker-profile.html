@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>worker-profile</ion-title>
+    <ion-buttons end>
+      <button ion-button right (click)="save()">Сохранить</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+    <ion-item *ngIf="addingNew !== 'profession'">
+      <ion-label>Выберите профессию из списка или добавьте новую</ion-label>
+      <ion-select
+        (ionChange)="changeProfession()"
+        [(ngModel)]="user.professions[0]"
+        cancelText="Cancel"
+        okText="OK"
+      >
+        <ion-option *ngFor="let prof of globalStore.professions" [value]="prof.id">{{prof.name}}</ion-option>
+      </ion-select>
+      <button ion-button item-right (click)="addingNew = 'profession'">Добавить</button>
+    </ion-item>
+    <ion-item *ngIf="addingNew === 'profession'">
+      <ion-input placeholder="Введите профессию" [(ngModel)]="newProfession"></ion-input>
+      <button icon-only color="danger" ion-button item-right (click)="addingNew = ''; newProfession = ''">
+        <ion-icon name='close-circle-outline'></ion-icon>
+      </button>
+      <button icon-only ion-button item-right (click)="addProfession()">
+        <ion-icon name='save'></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item *ngIf="addingNew !== 'specialization'">
+      <ion-label>Выберите специализацию из списка или добавьте новую</ion-label>
+      <ion-select
+        [disabled]="!user.professions[0]"
+        (ionChange)="changeSpecialization()"
+        [(ngModel)]="user.specializations[0]"
+        cancelText="Cancel"
+        okText="OK"
+      >
+        <ion-option *ngFor="let spec of globalStore.specializations" [value]="spec.id">{{spec.name}}</ion-option>
+      </ion-select>
+      <button ion-button item-right (click)="addingNew = 'specialization'">Добавить</button>
+    </ion-item>
+    <ion-item *ngIf="addingNew === 'specialization'">
+      <ion-input
+        [disabled]="!user.professions[0]"
+        [placeholder]="!user.professions[0] ? 'Выберите профессию' : 'Введите специализацию'" [(ngModel)]="newSpecialization"
+      ></ion-input>
+      <button icon-only color="danger" ion-button item-right (click)="addingNew = ''; newSpecialization = ''">
+        <ion-icon name='close-circle-outline'></ion-icon>
+      </button>
+      <button icon-only ion-button item-right (click)="addSpecialization()">
+        <ion-icon name='save'></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item *ngFor="let service of services">
+      <ion-checkbox (ionChange)="updateUserServices()" [(ngModel)]="service.selected"></ion-checkbox>
+      <ion-label>{{service.name}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="addingNew === 'service'">
+      <ion-input
+        [disabled]="!user.specializations[0]"
+        [placeholder]="!user.specializations[0] ? 'Выберите cпециализацию' : 'Введите услугу'" [(ngModel)]="newService"
+      ></ion-input>
+      <button icon-only color="danger" ion-button item-right (click)="addingNew = ''; newService = ''">
+        <ion-icon name='close-circle-outline'></ion-icon>
+      </button>
+      <button icon-only ion-button item-right (click)="addService()">
+        <ion-icon name='save'></ion-icon>
+      </button>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

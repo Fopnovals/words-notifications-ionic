@@ -1,0 +1,8 @@
+{
+  "name": "personal-secretary",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}
