@@ -18,7 +18,7 @@ export class SettingsPage {
     this.user.role = 'worker';
   }
 
-  // logout
+
   logout() {
     this.nav.setRoot(LoginPage);
   }

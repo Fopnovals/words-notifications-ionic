@@ -24,11 +24,11 @@ export class LoginPage {
   }
 
   googleLogin(): void {
-    this.auth.googleLogin()
+    // this.auth.googleLogin()
   }
 
   facebookLogin() {
-    this.auth.facebookLogin()
+    // this.auth.facebookLogin()
   }
 
   // go to register page

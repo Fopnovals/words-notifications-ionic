@@ -8,9 +8,8 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
-import * as firebase from 'firebase/app';
-import {config} from '../configs/firebase-config';
 import {UserStore} from "../_stores/user.store";
+import {AuthProvider} from "../providers/auth/auth";
 
 export interface MenuItem {
     title: string;
@@ -35,7 +34,8 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public keyboard: Keyboard,
     public userStore: UserStore,
-    public events: Events
+    public events: Events,
+    private auth: AuthProvider
   ) {
     this.initializeApp();
 
@@ -54,6 +54,7 @@ export class MyApp {
         this.userStore.getUserMe()
           .then(() => {
             this.nav.setRoot(HomePage);
+            this.enablePushNotifications()
           })
           .catch(err => console.log(err))
       }
@@ -64,17 +65,25 @@ export class MyApp {
       // this.splashScreen.hide();
 
       //*** Control Status Bar
-      this.statusBar.styleDefault();
-      this.statusBar.overlaysWebView(false);
-      this.initializeFirebase();
+      // this.statusBar.styleDefault();
+      // this.statusBar.overlaysWebView(false);
+      // this.initializeFirebase();
 
       //*** Control Keyboard
       // this.keyboard.disableScroll(true);
     });
   }
 
+  enablePushNotifications() {
+    // this.auth.firebaseNotifications().then((r) => {
+    //   if (r) {
+    //     this.auth.startToListening();
+    //   }
+    // });
+  }
+
   initializeFirebase() {
-    firebase.initializeApp(config);
+    // firebase.initializeApp(config);
   }
 
   openPage(page) {

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>173824680226-pka6vomdacgnc67bgsqloc5bk7gaue60.apps.googleusercontent.com</string>
+	<string>125939989775-ud833qvo0ig8r11gkjprif7bqegu20tp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.173824680226-pka6vomdacgnc67bgsqloc5bk7gaue60</string>
+	<string>com.googleusercontent.apps.125939989775-ud833qvo0ig8r11gkjprif7bqegu20tp</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCh0K4DxMAXRTaDQbRshoXF8hIFpyAQmiA</string>
+	<string>AIzaSyDcixYNXe8kdweHtn6fmCNeQFsACy5tkFs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>173824680226</string>
+	<string>125939989775</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ionicframework.personal-secretary</string>
+	<string>com.ionicframework.learningwords</string>
 	<key>PROJECT_ID</key>
-	<string>personal-secretary-12a35</string>
+	<string>learningwords-9fb38</string>
 	<key>STORAGE_BUCKET</key>
-	<string>personal-secretary-12a35.appspot.com</string>
+	<string>learningwords-9fb38.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:173824680226:ios:bd20d503634e49a4</string>
+	<string>1:125939989775:ios:97ddef0cf8564fb749127a</string>
 	<key>DATABASE_URL</key>
-	<string>https://personal-secretary-12a35.firebaseio.com</string>
+	<string>https://learningwords-9fb38.firebaseio.com</string>
 </dict>
 </plist>

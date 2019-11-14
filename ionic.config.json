@@ -1,8 +1,7 @@
 {
-  "name": "personal-secretary",
+  "name": "learningwords",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular",
-  "app_id": ""
+  "type": "ionic-angular"
 }

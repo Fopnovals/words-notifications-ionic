@@ -29,11 +29,11 @@ export class RegisterPage {
   }
 
   facebookRegister() {
-    this.auth.facebookRegister()
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log(err));
+    // this.auth.facebookRegister()
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => console.log(err));
   }
 
   // go to login page

@@ -25,11 +25,10 @@ import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { AuthProvider } from '../providers/auth/auth';
-import {GooglePlus} from "@ionic-native/google-plus";
-import {Facebook} from "@ionic-native/facebook";
 import {TokenInterceptor} from "../providers/token.interceptor";
 import {UserStore} from "../_stores/user.store";
 import {GlobalStore} from "../_stores/global.store";
+// import { Firebase } from '@ionic-native/firebase';
 
 @NgModule({
   declarations: [
@@ -80,10 +79,8 @@ import {GlobalStore} from "../_stores/global.store";
     TripService,
     WeatherProvider,
     AuthProvider,
-    GooglePlus,
     UserStore,
     GlobalStore,
-    Facebook,
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
   ]
 })

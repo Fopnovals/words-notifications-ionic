@@ -30,7 +30,7 @@ export class TokenInterceptor implements HttpInterceptor {
         },
         url: `${baseUrl}/${request.url}`
       });
-
+    console.log(request);
     return next.handle(request).do((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
         // do stuff with response if you want
