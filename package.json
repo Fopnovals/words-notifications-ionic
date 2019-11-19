@@ -1,15 +1,17 @@
 {
-  "name": "Personal-secretary",
-  "version": "0.0.3",
-  "author": "João Firmino <firminoata@gmail.com>",
-  "homepage": "https://market.ionicframework.com/themes/ionic3-start-theme",
+  "name": "ionic-4-push",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "https://ionicframework.com/",
   "scripts": {
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
+  "private": true,
   "dependencies": {
     "@angular/common": "4.4.4",
     "@angular/compiler": "4.4.4",
@@ -52,30 +54,47 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.2.4",
-    "typescript": "2.3.4"
+    "@angular-devkit/architect": "~0.13.8",
+    "@angular-devkit/build-angular": "~0.13.8",
+    "@angular-devkit/core": "~7.3.8",
+    "@angular-devkit/schematics": "~7.3.8",
+    "@angular/cli": "~7.3.8",
+    "@angular/compiler": "~7.2.2",
+    "@angular/compiler-cli": "~7.2.2",
+    "@angular/language-service": "~7.2.2",
+    "@ionic/angular-toolkit": "~1.5.1",
+    "@types/node": "~12.0.0",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "~4.5.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~8.1.0",
+    "tslint": "~5.17.0",
+    "typescript": "~3.1.6"
   },
-  "description": "Personal Secretary",
-  "cordovaPlugins": [],
-  "cordovaPlatforms": [],
+  "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-console": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-statusbar": {},
+      "cordova-plugin-fcm-with-dependecy-updated": {},
       "cordova-plugin-whitelist": {},
-      "ionic-plugin-keyboard": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-sqlite-storage": {},
-      "cordova-plugin-androidx": {},
-      "cordova-plugin-androidx-adapter": {}
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
       "ios",
       "android"
     ]
-  },
-  "config": {
-    "ionic_sass": "./sass.js"
   }
 }
