@@ -4,6 +4,7 @@ import {UserStore} from '../../_stores/user.store';
 import {Router} from '@angular/router';
 import { FCM } from '@ionic-native/fcm/ngx';
 import {NotificationsStore} from '../../_stores/notifications.store';
+import {ToastController} from '@ionic/angular';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +14,8 @@ export class AuthService {
     private http: HttpClient,
     private userStore: UserStore,
     private router: Router,
-    private notificationsStore: NotificationsStore
+    private notificationsStore: NotificationsStore,
+    private toastCtrl: ToastController
   ) { }
 
   register(user) {
@@ -83,6 +85,17 @@ export class AuthService {
     });
   }
 
+  async showToast(data) {
+    const toast = await this.toastCtrl.create({
+      message: data.body,
+      duration: 20000,
+      position: 'top',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+  }
+
   // FCM
   initNotifications() {
     this.fcm.onNotification().subscribe(data => {
@@ -98,10 +111,15 @@ export class AuthService {
         console.log(data)
         console.log('Received in foreground');
         this.notificationsStore.addNotification(data);
+        console.log(this.notificationsStore);
+        this.showToast(data);
         // this.pushes.push({
         //   body: data.body,
         //   title: data.title
         // })
+      }
+      if (data.route) {
+        this.router.navigateByUrl(data.route);
       }
     });
 
@@ -111,7 +129,7 @@ export class AuthService {
   }
 
   subscribeToTopic() {
-    this.fcm.subscribeToTopic('enappd');
+    this.fcm.subscribeToTopic('all');
   }
 
   getToken() {
@@ -121,6 +139,6 @@ export class AuthService {
   }
 
   unsubscribeFromTopic() {
-    this.fcm.unsubscribeFromTopic('enappd');
+    this.fcm.unsubscribeFromTopic('all');
   }
 }

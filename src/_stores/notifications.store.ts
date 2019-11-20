@@ -3,15 +3,19 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class NotificationsStore {
-  pushes = [];
+  pushesData = [];
 
   constructor() {}
 
   @action addNotification(push) {
-    this.pushes.push(push);
+    this.pushesData.push(push);
   }
 
   @action clearNotifications() {
-    this.pushes = [];
+    this.pushesData = [];
+  }
+
+  @computed get pushes() {
+    return this.pushesData;
   }
 }
