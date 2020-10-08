@@ -1,0 +1,19 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "words-reminder",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "server": {
+    "url": "http://localhost:8105",
+    "cleartext": true,
+    "originalUrl": "http://192.168.1.244:8100",
+    "originalCleartext": true
+  }
+}

@@ -1,6 +1,7 @@
 {
-  "name": "ionic-4-push",
+  "name": "words-reminder",
   "integrations": {
+    "capacitor": {},
     "cordova": {}
   },
   "type": "angular"
